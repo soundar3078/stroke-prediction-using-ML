@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('templates/stroke.jpg');
+            background-size: cover;
+        }
+        nav {
+            background: #007bff;
+            color: white;
+            padding: 15px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #fdfbfb;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 32px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .info-section {
+            background: #f4f7f9;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .info-section:hover {
+            background: #e1e7f0;
+            transform: translateY(-5px);
+        }
+        .info-section h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .info-section p, .info-section ul {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .info-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .info-section ul li {
+            font-size: 16px;
+            color: #555;
+        }
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-section a {
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .cta-section a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Stroke Prediction</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutstroke">About Stroke</a></li>
+            <li><a href="/prevention">Prevention Tips</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container" id="home">
+        <h1>Stroke Prediction</h1>
+        <form action="/predict" method="POST">
+            <!-- Form content omitted for brevity --> <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" name="age" placeholder="Enter your age" required>
+            </div>
+
+            <!-- Hypertension -->
+            <div class="form-group">
+                <label for="hypertension">Hypertension:</label>
+                <select name="hypertension" required>
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Heart Disease -->
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease:</label>
+                <select name="heart_disease" required>
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Average Glucose Level -->
+            <div class="form-group">
+                <label for="avg_glucose_level">Average Glucose Level:</label>
+                <input type="number" name="avg_glucose_level" step="0.01" placeholder="Enter glucose level (e.g., 85.5)" required>
+            </div>
+
+            <!-- BMI -->
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" name="bmi" step="0.1" placeholder="Enter BMI (e.g., 24.5)" required>
+            </div>
+
+            <!-- Smoking Status -->
+            <div class="form-group">
+                <label for="smoking_status">Smoking Status:</label>
+                <select name="smoking_status" required>
+                    <option value="">Select</option>
+                    <option value="formerly smoked">Formerly Smoked</option>
+                    <option value="never smoked">Never Smoked</option>
+                    <option value="smokes">Smokes</option>
+                </select>
+            </div>
+
+            <!-- Obesity -->
+            <div class="form-group">
+                <label for="obesity">Obesity:</label>
+                <select name="obesity" required>
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- Diabetes -->
+            <div class="form-group">
+                <label for="diabetes">Diabetes:</label>
+                <select name="diabetes" required>
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- Cholesterol -->
+            <div class="form-group">
+                <label for="cholesterol">Cholesterol:</label>
+                <select name="cholesterol" required>
+                    <option value="">Select</option>
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+
+            <!-- Stress -->
+            <div class="form-group">
+                <label for="stress">Stress:</label>
+                <select name="stress" required>
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- COVID-19 -->
+            <div class="form-group">
+                <label for="covid_19">COVID-19:</label>
+                <select name="covid_19" required>
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- Genetic Disorder -->
+            <div class="form-group">
+                <label for="genetic_disorder">Genetic Disorder:</label>
+                <select name="genetic_disorder" required>
+                    <option value="">Select</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- Weight -->
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="number" name="weight" step="0.1" placeholder="Enter weight (kg)" required>
+            </div>
+
+            <!-- Submit Button -->
+            
+            <button type="submit">Predict Stroke</button>
+        </form>
+    </div>
+
+    <!-- Information about Stroke -->
+    <div class="info-section">
+        <h2>What is Stroke?</h2>
+        <p>A stroke occurs when there is a sudden interruption in the blood supply to the brain. This can be caused by a blockage or rupture of blood vessels, leading to lasting brain damage and potential disability.</p>
+        <p>Strokes are medical emergencies that require immediate attention. They can occur suddenly, and recognizing the signs early can significantly improve outcomes.</p>
+    </div>
+
+    <div class="info-section">
+        <h2>Symptoms of Stroke</h2>
+        <ul>
+            <li>Sudden numbness or weakness, especially on one side of the body</li>
+            <li>Confusion, trouble speaking or understanding speech</li>
+            <li>Vision problems in one or both eyes</li>
+            <li>Difficulty walking, dizziness, loss of balance or coordination</li>
+            <li>Severe headache with no known cause</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>Stroke Risk Factors</h2>
+        <ul>
+            <li>High blood pressure</li>
+            <li>Smoking</li>
+            <li>High cholesterol levels</li>
+            <li>Diabetes</li>
+            <li>Obesity</li>
+            <li>Age, gender, and family history</li>
+            <li>Physical inactivity</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>Prevention Tips</h2>
+        <ul>
+            <li>Maintain a healthy diet with lots of fruits and vegetables</li>
+            <li>Exercise regularly, aiming for at least 30 minutes of moderate activity most days</li>
+            <li>Monitor your blood pressure and cholesterol levels regularly</li>
+            <li>Quit smoking and limit alcohol consumption</li>
+            <li>Stay active, manage stress, and maintain a healthy weight</li>
+            <li>Know your family history of heart disease and stroke</li>
+        </ul>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="info-section">
+        <h2>When to Seek Medical Help</h2>
+        <p>If you or someone around you shows signs of a stroke, seek medical help immediately. The faster a stroke is treated, the better the chances of recovery. Call emergency services or go to the hospital right away.</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+        <p>Learn more about preventing strokes and living a healthy lifestyle. <a href="/prevention">Click here</a> for more information.</p>
+    </div>
+
+</body>
+</html>

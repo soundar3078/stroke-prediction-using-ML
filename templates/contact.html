@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #0056b3;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fdfbfb;
+        }
+
+        .container {
+            padding: 30px 10%;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-container .form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .form-container .contact-info {
+            flex: 1;
+            min-width: 250px;
+            background: #f7f9fc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .contact-info p,
+        .contact-info a {
+            font-size: 16px;
+            color: #555;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .contact-info a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .contact-info .social-icons {
+            margin-top: 20px;
+        }
+
+        .contact-info .social-icons a {
+            margin-right: 15px;
+            font-size: 20px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info .social-icons a:hover {
+            color: #007bff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        form button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/aboutstroke">About Stroke</a>
+        <a href="/prevention">Prevention</a>
+        <a href="/contact">Contact Us</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>We'd Love to Hear from You</h2>
+        <p style="text-align: center;">Have questions, feedback, or concerns? Get in touch with us using the form below or reach out through our contact details.</p>
+
+        <div class="form-container">
+            <!-- Contact Form -->
+            <div class="form">
+                <form action="/submit_contact" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+                <p>Address: 123 Health St, Wellness City, WC 12345</p>
+
+                <div class="social-icons">
+                    <h3>Follow Us</h3>
+                    <a href="#" title="Facebook">🌐</a>
+                    <a href="#" title="Twitter">🌐</a>
+                    <a href="#" title="Instagram">🌐</a>
+                    <a href="#" title="LinkedIn">🌐</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

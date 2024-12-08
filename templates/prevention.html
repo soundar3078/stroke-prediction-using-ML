@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevention</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #0288d1, #03a9f4);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #0288d1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c8e6c9;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h2, h3 {
+            color: #0288d1;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .steps, .info-cards, .tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .step-card, .info-card, .tip-card {
+            flex: 1 1 calc(33% - 20px);
+            background: linear-gradient(145deg, #e3f2fd, #c5cae9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover, .info-card:hover, .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-card h3, .info-card h3, .tip-card h4 {
+            color: #01579b;
+            margin-bottom: 10px;
+        }
+
+        .list-group {
+            margin-top: 20px;
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .list-group li {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #bbdefb, #c8e6c9);
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            font-style: italic;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #0288d1, #4caf50);
+            color: white;
+            margin-top: 30px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Comprehensive Stroke Prevention</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/aboutstroke">About Stroke</a>
+        <a href="/prevention">Prevention</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>Why is Stroke Prevention Crucial?</h2>
+        <p>Stroke is one of the leading causes of death and disability worldwide. Preventing it is not just a health priority but a commitment to living a fulfilling and active life. Here, we explore practical and medically proven prevention strategies.</p>
+
+        <div class="steps">
+            <div class="step-card">
+                <h3>Control Blood Pressure</h3>
+                <p>Uncontrolled blood pressure is the most significant risk factor for strokes. Monitor regularly and maintain it below 120/80 mmHg for optimal health.</p>
+            </div>
+            <div class="step-card">
+                <h3>Stay Physically Active</h3>
+                <p>Engage in regular activities like walking, jogging, or yoga for at least 30 minutes a day to keep your heart healthy and blood vessels strong.</p>
+            </div>
+            <div class="step-card">
+                <h3>Eat Heart-Healthy Foods</h3>
+                <p>A diet rich in fruits, vegetables, nuts, and lean proteins can significantly reduce your risk of stroke.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Additional Prevention Strategies</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Avoid Tobacco</h3>
+                    <p>Smoking and chewing tobacco damage blood vessels and increase stroke risk. Quitting today will dramatically lower your risks.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Manage Stress</h3>
+                    <p>Chronic stress can elevate blood pressure and disrupt normal body functions. Practice mindfulness, meditation, or seek professional help if necessary.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Limit Alcohol</h3>
+                    <p>Consuming more than two drinks a day can increase your risk. Limit alcohol intake to moderate levels or abstain completely.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Know the Warning Signs of Stroke</h2>
+            <p>Time is critical during a stroke. Recognizing the symptoms early can save lives. Remember the acronym **F.A.S.T**:</p>
+            <ul class="list-group">
+                <li>**F**ace drooping</li>
+                <li>**A**rm weakness</li>
+                <li>**S**peech difficulty</li>
+                <li>**T**ime to call emergency services</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Expert Tips for Long-Term Health</h2>
+            <div class="tips">
+                <div class="tip-card">
+                    <h4>Monitor Cholesterol</h4>
+                    <p>High cholesterol levels can clog arteries, increasing stroke risks. Get regular check-ups and follow a doctor’s advice.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Stay Hydrated</h4>
+                    <p>Drink enough water daily to maintain healthy blood flow and prevent dehydration-related complications.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Exercise Your Mind</h4>
+                    <p>Engage in mental activities like puzzles and reading to boost brain health and keep cognitive abilities sharp.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-section">
+            "Preventing stroke is a lifelong journey. Every small step today is a giant leap towards a healthier, happier tomorrow."
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Stroke Awareness Initiative | Designed with Care</p>
+    </footer>
+</body>
+</html>
